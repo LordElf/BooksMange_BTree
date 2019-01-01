@@ -40,6 +40,10 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.txtBorrow = new System.Windows.Forms.TextBox();
+            this.txtReturn = new System.Windows.Forms.TextBox();
+            this.btnBorrow = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtResultPrint
@@ -47,6 +51,7 @@
             this.txtResultPrint.Location = new System.Drawing.Point(113, 324);
             this.txtResultPrint.Multiline = true;
             this.txtResultPrint.Name = "txtResultPrint";
+            this.txtResultPrint.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtResultPrint.Size = new System.Drawing.Size(287, 190);
             this.txtResultPrint.TabIndex = 7;
             // 
@@ -148,11 +153,49 @@
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
+            // txtBorrow
+            // 
+            this.txtBorrow.Location = new System.Drawing.Point(115, 548);
+            this.txtBorrow.Name = "txtBorrow";
+            this.txtBorrow.Size = new System.Drawing.Size(100, 25);
+            this.txtBorrow.TabIndex = 42;
+            // 
+            // txtReturn
+            // 
+            this.txtReturn.Location = new System.Drawing.Point(116, 601);
+            this.txtReturn.Name = "txtReturn";
+            this.txtReturn.Size = new System.Drawing.Size(100, 25);
+            this.txtReturn.TabIndex = 43;
+            // 
+            // btnBorrow
+            // 
+            this.btnBorrow.Location = new System.Drawing.Point(221, 549);
+            this.btnBorrow.Name = "btnBorrow";
+            this.btnBorrow.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrow.TabIndex = 44;
+            this.btnBorrow.Text = "borrow";
+            this.btnBorrow.UseVisualStyleBackColor = true;
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(221, 603);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.TabIndex = 45;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1461, 694);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.btnBorrow);
+            this.Controls.Add(this.txtReturn);
+            this.Controls.Add(this.txtBorrow);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.txtDel);
             this.Controls.Add(this.txtInsert);
@@ -186,6 +229,10 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.TextBox txtBorrow;
+        private System.Windows.Forms.TextBox txtReturn;
+        private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Button btnReturn;
     }
 }
 

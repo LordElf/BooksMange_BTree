@@ -13,5 +13,6 @@ namespace booksManagement
         public string author;
         public int libStorage;
         public int libLeft;
+        public List<Reader> reader = new List<Reader>();
     }
 }

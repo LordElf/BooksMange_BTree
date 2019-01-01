@@ -16,12 +16,14 @@ namespace booksManagement
         public Form1()
         {
             InitializeComponent();
+            ID = random.Next(0, 9999);
         }
 
         BTree<int, Book> bTree = new BTree<int, Book>(4);
         List<string> authorName = new List<string>();
         List<string> bookName = new List<string>();
-
+        Random random = new Random();
+        int ID;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -36,8 +38,7 @@ namespace booksManagement
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
-        {
-            Random random = new Random();
+        { 
             int key = random.Next(0, 999);
             Book book = new Book
             {
@@ -99,6 +100,76 @@ namespace booksManagement
                     "curent availability: " + result.pointer.libLeft);
             }
             catch(Exception err)
+            {
+                txtResultPrint.AppendText(err.ToString());
+            }
+        }
+
+        private void btnBorrow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Node<int, Book> buffer = null;
+                int index = 0;
+                var result = bTree.Search(int.Parse(txtSearch.Text), ref index, ref buffer);
+                if (result.pointer.libLeft > 0)
+                {
+                    result.pointer.libLeft--;
+                    Reader reader = new Reader()
+                    {
+                        borrowDate = 20190101,
+                        dateLeft = 30,
+                        ID = ID
+                    };
+                    result.pointer.reader.Add(reader);
+                    txtResultPrint.AppendText("index: " + result.key +
+                        "                                " +
+                        "name: " + result.pointer.name +
+                        "                                " +
+                        "author: " + result.pointer.author +
+                        "                                " +
+                        "curent availability: " + result.pointer.libLeft);
+                    txtResultPrint.AppendText("borrowed! ID: " + ID +
+                        "                                " +
+                        result.pointer.reader.ToString());
+                }
+            }
+            catch (Exception err)
+            {
+                txtResultPrint.AppendText(err.ToString());
+            }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtResultPrint.Clear();
+                Node<int, Book> buffer = null;
+                int index = 0;
+                var result = bTree.Search(int.Parse(txtSearch.Text), ref index, ref buffer);
+                List<Reader> buffer2 = new List<Reader>();
+                buffer2.AddRange (result.pointer.reader);
+                foreach (var x in buffer2) 
+                {
+                    if (x.ID == ID)
+                    {
+                        result.pointer.libLeft++;
+                        result.pointer.reader.Remove(x);
+                    }
+                }
+                txtResultPrint.AppendText("index: " + result.key +
+                    "                                " +
+                    "name: " + result.pointer.name +
+                    "                                " +
+                    "author: " + result.pointer.author +
+                    "                                " +
+                    "curent availability: " + result.pointer.libLeft);
+                txtResultPrint.AppendText("returned! ID: " + ID +
+                        "                                " +
+                        result.pointer.reader.ToString());
+            }
+            catch (Exception err)
             {
                 txtResultPrint.AppendText(err.ToString());
             }
