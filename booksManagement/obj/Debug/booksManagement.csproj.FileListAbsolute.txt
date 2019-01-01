@@ -1,0 +1,10 @@
+D:\C#\booksManagement\booksManagement\bin\Debug\booksManagement.exe.config
+D:\C#\booksManagement\booksManagement\bin\Debug\booksManagement.exe
+D:\C#\booksManagement\booksManagement\bin\Debug\booksManagement.pdb
+D:\C#\booksManagement\booksManagement\obj\Debug\booksManagement.csprojAssemblyReference.cache
+D:\C#\booksManagement\booksManagement\obj\Debug\booksManagement.Form1.resources
+D:\C#\booksManagement\booksManagement\obj\Debug\booksManagement.Properties.Resources.resources
+D:\C#\booksManagement\booksManagement\obj\Debug\booksManagement.csproj.GenerateResource.cache
+D:\C#\booksManagement\booksManagement\obj\Debug\booksManagement.csproj.CoreCompileInputs.cache
+D:\C#\booksManagement\booksManagement\obj\Debug\booksManagement.exe
+D:\C#\booksManagement\booksManagement\obj\Debug\booksManagement.pdb
